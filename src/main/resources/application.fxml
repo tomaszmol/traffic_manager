@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane xmlns="http://javafx.com/javafx">
+    <center>
+    <StackPane xmlns="http://javafx.com/javafx"
+               xmlns:fx="http://javafx.com/fxml"
+               alignment="CENTER"
+               prefWidth="1000" prefHeight="1000">
+
+        <BorderPane maxHeight="600" maxWidth="600">
+
+            <center>
+                <BorderPane prefWidth="400.0" prefHeight="400.0">
+
+                    <!-- Przycisk Północ -->
+                    <top>
+                        <HBox alignment="CENTER" style="-fx-padding: 20 20 20 20;">
+                            <Button text="Północ"/>
+                        </HBox>
+                    </top>
+
+                    <!-- Przycisk Zachód -->
+                    <left>
+                        <VBox alignment="CENTER" style="-fx-padding: 20 20 20 20;">
+                            <Button text="Zachód"/>
+                        </VBox>
+                    </left>
+
+                    <!-- Przycisk Wschód -->
+                    <right>
+                        <VBox alignment="CENTER" style="-fx-padding: 20 20 20 20;">
+                            <Button text="Wschód"/>
+                        </VBox>
+                    </right>
+
+                    <!-- Przycisk Południe -->
+                    <bottom>
+                        <HBox alignment="CENTER" style="-fx-padding: 20 20 20 20;">
+                            <Button text="Południe"/>
+                        </HBox>
+                    </bottom>
+
+                    <!-- Skrzyżowanie -->
+
+                    <center>
+                        <StackPane prefWidth="600.0" prefHeight="600.0" style="-fx-background-color: #90b493">
+                            <!-- Droga pionowa -->
+                            <Rectangle width="80" height="600" fill="#4b514a"/>
+
+                            <!-- Droga pozioma -->
+                            <Rectangle width="600" height="80" fill="#4b514a"/>
+
+                            <!-- Pasy pionowe -->
+                            <Rectangle width="6" height="20" fill="white" translateY="-295"/>
+                            <Rectangle width="6" height="20" fill="white" translateY="-250"/>
+                            <Rectangle width="6" height="20" fill="white" translateY="-200"/>
+                            <Rectangle width="6" height="20" fill="white" translateY="-150"/>
+                            <Rectangle width="6" height="20" fill="white" translateY="-100"/>
+                            <Rectangle width="6" height="20" fill="white" translateY="-50"/>
+<!--                            <Rectangle width="6" height="20" fill="white"/>-->
+                            <Rectangle width="6" height="20" fill="white" translateY="50"/>
+                            <Rectangle width="6" height="20" fill="white" translateY="100"/>
+                            <Rectangle width="6" height="20" fill="white" translateY="150"/>
+                            <Rectangle width="6" height="20" fill="white" translateY="200"/>
+                            <Rectangle width="6" height="20" fill="white" translateY="250"/>
+                            <Rectangle width="6" height="20" fill="white" translateY="295"/>
+
+                            <!-- Pasy poziome -->
+                            <Rectangle width="10" height="6" fill="white" translateX="-295"/>
+                            <Rectangle width="20" height="6" fill="white" translateX="-250"/>
+                            <Rectangle width="20" height="6" fill="white" translateX="-200"/>
+                            <Rectangle width="20" height="6" fill="white" translateX="-150"/>
+                            <Rectangle width="20" height="6" fill="white" translateX="-100"/>
+                            <Rectangle width="20" height="6" fill="white" translateX="-50"/>
+<!--                            <Rectangle width="20" height="6" fill="white"/>-->
+                            <Rectangle width="20" height="6" fill="white" translateX="50"/>
+                            <Rectangle width="20" height="6" fill="white" translateX="100"/>
+                            <Rectangle width="20" height="6" fill="white" translateX="150"/>
+                            <Rectangle width="20" height="6" fill="white" translateX="200"/>
+                            <Rectangle width="20" height="6" fill="white" translateX="250"/>
+                            <Rectangle width="10" height="6" fill="white" translateX="295"/>
+                        </StackPane>
+                    </center>
+
+                </BorderPane>
+            </center>
+
+        </BorderPane>
+
+
+
+    </StackPane>
+    </center>
+
+    <!-- Dolny przycisk przesunięty niżej -->
+    <bottom>
+        <HBox alignment="CENTER" style="-fx-padding: 20 20 20 20;">
+            <Button text="Południe"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
+
+
+
+
+
