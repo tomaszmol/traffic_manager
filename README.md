@@ -19,5 +19,5 @@ If you don’t have Gradle, you can use the included wrapper:
   ```
 - On Windows:
   ```bash
-  gradlew.bat run
+  ./gradlew.bat run
   ```
