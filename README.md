@@ -6,7 +6,16 @@ git clone https://github.com/tomaszmol/traffic_manager.git
 cd traffic_manager
 ```
 
-### 2. Run the application
+### 2. Install Java 21
+Make sure you have **Java 21** installed on your machine, as this application requires it to run.
+
+To verify if you have Java 21 installed, run:
+
+```bash
+java -version
+```
+
+### 3. Run the application
 If you have Gradle installed:
 ```bash
 gradle run
