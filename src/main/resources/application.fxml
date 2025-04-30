@@ -9,11 +9,15 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<BorderPane xmlns="http://javafx.com/javafx">
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.shape.Box?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.app.project.Controller">
     <center>
-    <StackPane xmlns="http://javafx.com/javafx"
-               xmlns:fx="http://javafx.com/fxml"
-               alignment="CENTER"
+    <StackPane alignment="CENTER"
                prefWidth="1000" prefHeight="1000">
 
         <BorderPane maxHeight="600" maxWidth="600">
@@ -23,71 +27,92 @@
 
                     <!-- Przycisk Północ -->
                     <top>
-                        <HBox alignment="CENTER" style="-fx-padding: 20 20 20 20;">
-                            <Button text="Północ"/>
+                        <HBox alignment="CENTER" style="-fx-padding: 10 10 10 10;">
+                            <Button fx:id="northButton" text="Add lane from north" onAction="#handleNorthAddLaneClick"/>
                         </HBox>
                     </top>
 
                     <!-- Przycisk Zachód -->
                     <left>
-                        <VBox alignment="CENTER" style="-fx-padding: 20 20 20 20;">
-                            <Button text="Zachód"/>
+                        <VBox alignment="CENTER" style="-fx-padding: 10 10 10 10;">
+                            <Button fx:id="westButton" text="Add lane from west" onAction="#handleWestAddLaneClick"/>
                         </VBox>
                     </left>
 
                     <!-- Przycisk Wschód -->
                     <right>
-                        <VBox alignment="CENTER" style="-fx-padding: 20 20 20 20;">
-                            <Button text="Wschód"/>
+                        <VBox alignment="CENTER" style="-fx-padding: 10 10 10 10;">
+                            <Button fx:id="eastButton" text="Add lane from east" onAction="#handleEastAddLaneClick"/>
                         </VBox>
                     </right>
 
                     <!-- Przycisk Południe -->
                     <bottom>
-                        <HBox alignment="CENTER" style="-fx-padding: 20 20 20 20;">
-                            <Button text="Południe"/>
-                        </HBox>
+                        <VBox spacing="10" style="-fx-padding: 10;">
+                            <HBox alignment="CENTER" style="-fx-padding: 10 10 10 10;">
+                                <Button fx:id="southButton" text="Add lane from south" onAction="#handleSouthAddLaneClick"/>
+                            </HBox>
+                            <HBox alignment="CENTER" style="-fx-padding: 10 10 10 10;">
+                                <Label fx:id="logLabel" wrapText="true"/>
+                            </HBox>
+                        </VBox>
                     </bottom>
 
                     <!-- Skrzyżowanie -->
 
                     <center>
                         <StackPane prefWidth="600.0" prefHeight="600.0" style="-fx-background-color: #90b493">
-                            <!-- Droga pionowa -->
-                            <Rectangle width="80" height="600" fill="#4b514a"/>
+                            <fx:include source="map.fxml"/>
+
+<!--                            <Rectangle width="30" height="600" fill="#4b514a" translateX="-15"/>-->
+<!--                            <Rectangle width="30" height="600" fill="#4b514a" translateX="15"/>-->
 
                             <!-- Droga pozioma -->
-                            <Rectangle width="600" height="80" fill="#4b514a"/>
+                            <Rectangle width="600" height="30" fill="#4b514a" translateY="-15"/>
+                            <Rectangle width="600" height="30" fill="#4b514a" translateY="15"/>
 
                             <!-- Pasy pionowe -->
-                            <Rectangle width="6" height="20" fill="white" translateY="-295"/>
-                            <Rectangle width="6" height="20" fill="white" translateY="-250"/>
-                            <Rectangle width="6" height="20" fill="white" translateY="-200"/>
-                            <Rectangle width="6" height="20" fill="white" translateY="-150"/>
-                            <Rectangle width="6" height="20" fill="white" translateY="-100"/>
-                            <Rectangle width="6" height="20" fill="white" translateY="-50"/>
+                            <Rectangle width="2" height="270" fill="white" translateY="-165" translateX="-2"/>
+                            <Rectangle width="2" height="270" fill="white" translateY="-165" translateX="2"/>
+
+                            <Rectangle width="2" height="270" fill="white" translateY="165" translateX="-2"/>
+                            <Rectangle width="2" height="270" fill="white" translateY="165" translateX="2"/>
+
+<!--                            <Rectangle width="3" height="10" fill="white" translateY="-295"/>-->
+<!--                            <Rectangle width="3" height="20" fill="white" translateY="-250"/>-->
+<!--                            <Rectangle width="3" height="20" fill="white" translateY="-200"/>-->
+<!--                            <Rectangle width="3" height="20" fill="white" translateY="-150"/>-->
+<!--                            <Rectangle width="3" height="20" fill="white" translateY="-100"/>-->
+<!--                            <Rectangle width="3" height="20" fill="white" translateY="-50"/>-->
 <!--                            <Rectangle width="6" height="20" fill="white"/>-->
-                            <Rectangle width="6" height="20" fill="white" translateY="50"/>
-                            <Rectangle width="6" height="20" fill="white" translateY="100"/>
-                            <Rectangle width="6" height="20" fill="white" translateY="150"/>
-                            <Rectangle width="6" height="20" fill="white" translateY="200"/>
-                            <Rectangle width="6" height="20" fill="white" translateY="250"/>
-                            <Rectangle width="6" height="20" fill="white" translateY="295"/>
+<!--                            <Rectangle width="3" height="20" fill="white" translateY="50"/>-->
+<!--                            <Rectangle width="3" height="20" fill="white" translateY="100"/>-->
+<!--                            <Rectangle width="3" height="20" fill="white" translateY="150"/>-->
+<!--                            <Rectangle width="3" height="20" fill="white" translateY="200"/>-->
+<!--                            <Rectangle width="3" height="20" fill="white" translateY="250"/>-->
+<!--                            <Rectangle width="3" height="10" fill="white" translateY="295"/>-->
 
                             <!-- Pasy poziome -->
-                            <Rectangle width="10" height="6" fill="white" translateX="-295"/>
-                            <Rectangle width="20" height="6" fill="white" translateX="-250"/>
-                            <Rectangle width="20" height="6" fill="white" translateX="-200"/>
-                            <Rectangle width="20" height="6" fill="white" translateX="-150"/>
-                            <Rectangle width="20" height="6" fill="white" translateX="-100"/>
-                            <Rectangle width="20" height="6" fill="white" translateX="-50"/>
-<!--                            <Rectangle width="20" height="6" fill="white"/>-->
-                            <Rectangle width="20" height="6" fill="white" translateX="50"/>
-                            <Rectangle width="20" height="6" fill="white" translateX="100"/>
-                            <Rectangle width="20" height="6" fill="white" translateX="150"/>
-                            <Rectangle width="20" height="6" fill="white" translateX="200"/>
-                            <Rectangle width="20" height="6" fill="white" translateX="250"/>
-                            <Rectangle width="10" height="6" fill="white" translateX="295"/>
+                            <Rectangle width="270" height="2" fill="white" translateX="-165" translateY="2"/>
+                            <Rectangle width="270" height="2" fill="white" translateX="-165" translateY="-2"/>
+
+                            <Rectangle width="270" height="2" fill="white" translateX="165" translateY="2"/>
+                            <Rectangle width="270" height="2" fill="white" translateX="165" translateY="-2"/>
+
+
+<!--                            <Rectangle width="10" height="3" fill="white" translateX="-295"/>-->
+<!--                            <Rectangle width="20" height="3" fill="white" translateX="-250"/>-->
+<!--                            <Rectangle width="20" height="3" fill="white" translateX="-200"/>-->
+<!--                            <Rectangle width="20" height="3" fill="white" translateX="-150"/>-->
+<!--                            <Rectangle width="20" height="3" fill="white" translateX="-100"/>-->
+<!--                            <Rectangle width="20" height="3" fill="white" translateX="-50"/>-->
+<!--&lt;!&ndash;                            <Rectangle width="20" height="6" fill="white"/>&ndash;&gt;-->
+<!--                            <Rectangle width="20" height="3" fill="white" translateX="50"/>-->
+<!--                            <Rectangle width="20" height="3" fill="white" translateX="100"/>-->
+<!--                            <Rectangle width="20" height="3" fill="white" translateX="150"/>-->
+<!--                            <Rectangle width="20" height="3" fill="white" translateX="200"/>-->
+<!--                            <Rectangle width="20" height="3" fill="white" translateX="250"/>-->
+<!--                            <Rectangle width="10" height="3" fill="white" translateX="295"/>-->
                         </StackPane>
                     </center>
 
@@ -103,7 +128,7 @@
 
     <!-- Dolny przycisk przesunięty niżej -->
     <bottom>
-        <HBox alignment="CENTER" style="-fx-padding: 20 20 20 20;">
+        <HBox alignment="CENTER" translateY="-50">
             <Button text="Południe"/>
         </HBox>
     </bottom>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.StackPane?>
+
+<?import javafx.scene.canvas.Canvas?>
+<StackPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.project.MapController"
+           prefWidth="600.0" prefHeight="600.0" style="-fx-background-color: #90b493">
+    <Canvas fx:id="fromNorthLanes" width="600.0" height="600.0">
+    </Canvas>
+    <Canvas fx:id="fromEastLanes" width="600.0" height="600.0">
+    </Canvas>
+    <Canvas fx:id="fromSouthLanes" width="600.0" height="600.0">
+    </Canvas>
+    <Canvas fx:id="fromWestLanes" width="600.0" height="600.0">
+    </Canvas>
+
+</StackPane>

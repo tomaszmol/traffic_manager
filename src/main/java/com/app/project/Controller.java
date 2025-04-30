@@ -1,16 +1,38 @@
 package com.app.project;
 
+import com.app.project.model.Intersection;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Label;
+import javafx.scene.paint.Color;
 
 public class Controller {
+    MapController mapController = new MapController();
 
     @FXML
-    private Button button;
+    private Label logLabel;
 
-    // Metoda obsługująca kliknięcie przycisku
+
     @FXML
-    public void handleButtonClick() {
-        System.out.println("Button clicked!");
+    public void handleNorthAddLaneClick(ActionEvent actionEvent) {
+        AppLogger.getInstance().log("polnoc");
+
+    }
+
+    @FXML
+    public void handleWestAddLaneClick(ActionEvent actionEvent) {
+        AppLogger.getInstance().log("zachod");
+    }
+
+    @FXML
+    public void handleEastAddLaneClick(ActionEvent actionEvent) {
+        AppLogger.getInstance().log("polnoc");
+    }
+
+    @FXML
+    public void handleSouthAddLaneClick(ActionEvent actionEvent) {
+        AppLogger.getInstance().log("polnoc");
     }
 }
